@@ -14,6 +14,8 @@
 		1E75469E1B4D2BE700A8BC1C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E75469D1B4D2BE700A8BC1C /* Images.xcassets */; };
 		1E7546A11B4D2BE700A8BC1C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E75469F1B4D2BE700A8BC1C /* LaunchScreen.xib */; };
 		1E7546AD1B4D2BE700A8BC1C /* WordListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7546AC1B4D2BE700A8BC1C /* WordListTests.m */; };
+		1E7546B81B4D2CAA00A8BC1C /* Persistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7546B71B4D2CAA00A8BC1C /* Persistence.m */; };
+		1E7546BB1B4D2CF800A8BC1C /* WordList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1E7546B91B4D2CF800A8BC1C /* WordList.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		1E7546A61B4D2BE700A8BC1C /* WordListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E7546AB1B4D2BE700A8BC1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E7546AC1B4D2BE700A8BC1C /* WordListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordListTests.m; sourceTree = "<group>"; };
+		1E7546B61B4D2CAA00A8BC1C /* Persistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Persistence.h; sourceTree = "<group>"; };
+		1E7546B71B4D2CAA00A8BC1C /* Persistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Persistence.m; sourceTree = "<group>"; };
+		1E7546BA1B4D2CF800A8BC1C /* WordList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordList.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +86,14 @@
 		1E75468F1B4D2BE700A8BC1C /* WordList */ = {
 			isa = PBXGroup;
 			children = (
+				1E7546B61B4D2CAA00A8BC1C /* Persistence.h */,
+				1E7546B71B4D2CAA00A8BC1C /* Persistence.m */,
 				1E7546941B4D2BE700A8BC1C /* AppDelegate.h */,
 				1E7546951B4D2BE700A8BC1C /* AppDelegate.m */,
 				1E7546971B4D2BE700A8BC1C /* ViewController.h */,
 				1E7546981B4D2BE700A8BC1C /* ViewController.m */,
 				1E75469A1B4D2BE700A8BC1C /* Main.storyboard */,
+				1E7546B91B4D2CF800A8BC1C /* WordList.xcdatamodeld */,
 				1E75469D1B4D2BE700A8BC1C /* Images.xcassets */,
 				1E75469F1B4D2BE700A8BC1C /* LaunchScreen.xib */,
 				1E7546901B4D2BE700A8BC1C /* Supporting Files */,
@@ -220,6 +228,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E7546991B4D2BE700A8BC1C /* ViewController.m in Sources */,
+				1E7546BB1B4D2CF800A8BC1C /* WordList.xcdatamodeld in Sources */,
+				1E7546B81B4D2CAA00A8BC1C /* Persistence.m in Sources */,
 				1E7546961B4D2BE700A8BC1C /* AppDelegate.m in Sources */,
 				1E7546931B4D2BE700A8BC1C /* main.m in Sources */,
 			);
@@ -426,6 +436,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1E7546B91B4D2CF800A8BC1C /* WordList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1E7546BA1B4D2CF800A8BC1C /* WordList.xcdatamodel */,
+			);
+			currentVersion = 1E7546BA1B4D2CF800A8BC1C /* WordList.xcdatamodel */;
+			path = WordList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1E7546851B4D2BE700A8BC1C /* Project object */;
 }
