@@ -113,6 +113,7 @@
     [string appendString:[self twentyLetterWordsEndingInIng]];
     [string appendString:[self containingQButNotU]];
     [string appendString:[self highCountCategories]];
+    [string appendString:[self averageWordLengthFromExpressionDescription]];
     return string;
 }
 
@@ -243,6 +244,25 @@
     fetchRequest.predicate = predicate;
     NSArray *categories = [self.managedObjectContext executeFetchRequest:fetchRequest error:NULL];
     return [NSString stringWithFormat:@"High count categories: %@\n", [[categories valueForKey:@"firstLetter"] componentsJoinedByString:@","]];
+}
+
+- (NSString *)averageWordLengthFromExpressionDescription {
+    NSExpression *length = [NSExpression expressionForKeyPath:@"length"];
+    NSExpression *average = [NSExpression expressionForFunction:@"average:" arguments:@[length]];
+    
+    NSExpressionDescription *averageDescription = [[NSExpressionDescription alloc] init];
+    averageDescription.name = @"average";
+    averageDescription.expression = average;
+    averageDescription.expressionResultType = NSFloatAttributeType;
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Word"];
+    fetchRequest.propertiesToFetch = @[averageDescription];
+    fetchRequest.resultType = NSDictionaryResultType;
+    NSArray *results = [self.managedObjectContext executeFetchRequest:fetchRequest
+        error:NULL];
+    NSLog(@"%@", results);
+    return [NSString stringWithFormat:@"Average from expression description: %.2f\n",
+        [[results[0] valueForKey:@"average"] floatValue]];
 }
 
 @end
